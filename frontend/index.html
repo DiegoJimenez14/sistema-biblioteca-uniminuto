@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Préstamos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Biblioteca</h1>
+            <button id="themeToggle">Alternar Tema</button>
+        </header>
+        <main>
+            <form id="prestamoForm">
+                <div class="form-group">
+                    <label for="nombreUsuario">Usuario</label>
+                    <input type="text" id="nombreUsuario" name="nombreUsuario" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="libro">Libro</label>
+                    <input type="text" id="libro" name="libro" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="fechaPrestamo">Fecha</label>
+                    <input type="date" id="fechaPrestamo" name="fechaPrestamo" required>
+                </div>
+                <button type="submit">Registrar Préstamo</button>
+            </form>
+            <div id="notificacion" class="oculto"></div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
