@@ -1,27 +1,139 @@
-/* --- ESTILOS AGREGADOS POR INVESTIGACIÓN AUTÓNOMA (UX/UI Avanzado) --- */
+/* Importar fuente moderna y limpia */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* --- SISTEMA DE DISEÑO EMPRESARIAL (Variables) --- */
 :root {
-    --primary-color: #007BFF;
-    --hover-color: #0056b3;
+    --bg-color: #f8f9fa; /* Fondo claro corporativo */
+    --surface-color: #ffffff;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --border-color: #dadce0;
+    --primary-color: #1a73e8; /* Azul tecnológico */
+    --hover-color: #1557b0;
     --transition-speed: 0.3s;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Transición suave y estado Focus para inputs (Accesibilidad) */
+/* --- TEMA OSCURO (Activado vía JavaScript) --- */
+.dark-theme {
+    --bg-color: #202124;
+    --surface-color: #292a2d;
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --border-color: #5f6368;
+    --primary-color: #8ab4f8;
+    --hover-color: #aecbfa;
+}
+
+/* --- ESTILOS BASE --- */
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+/* --- CABECERA Y BOTÓN DE TEMA (FLEXBOX) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+#themeToggle {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all var(--transition-speed) ease;
+}
+
+#themeToggle:hover {
+    background-color: rgba(26, 115, 232, 0.04);
+    border-color: var(--primary-color);
+}
+
+/* --- TARJETA DEL FORMULARIO --- */
+form {
+    background-color: var(--surface-color);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-speed) ease;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* --- CAMPOS DE ENTRADA --- */
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 15px;
+    transition: all var(--transition-speed) ease;
+}
+
 input[type="text"]:focus,
 input[type="date"]:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    outline: none; /* Elimina el outline por defecto del navegador */
-    transition: box-shadow var(--transition-speed) ease-in-out;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+    outline: none;
 }
 
-/* Transición para el botón */
-input[type="submit"] {
-    /* ... propiedades base ... */
+/* --- BOTÓN DE ENVÍO --- */
+button[type="submit"] {
+    width: 100%;
     background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
     transition: background-color var(--transition-speed) ease;
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
     background-color: var(--hover-color);
-    transform: translateY(-2px); /* Pequeño salto del botón para interactividad */
 }
